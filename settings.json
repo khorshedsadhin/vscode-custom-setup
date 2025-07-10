@@ -3,13 +3,22 @@
   "editor.suggest.insertMode": "replace",
   "editor.linkedEditing": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 1.2,
   "launch": {},
   "[json]": {},
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "update.showReleaseNotes": false,
   "zenMode.hideLineNumbers": false,
+
+  // Explorer Edits
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 16,
+  "explorer.compactFolders": false,
+
+  //git edits
+  "git.decorations.enabled": false,
 
   //https://github.com/glennraya/vscode-settings-json/blob/main/settings.json
   "editor.copyWithSyntaxHighlighting": false,
@@ -234,5 +243,7 @@
   "editor.fontWeight": "normal",
   "git.openRepositoryInParentFolders": "always",
   "workbench.colorTheme": "Bearded Theme Monokai Black",
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.fontSize": 15
 }
