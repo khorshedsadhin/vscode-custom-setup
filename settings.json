@@ -1,249 +1,182 @@
 {
-  "editor.formatOnSave": true,
-  "editor.suggest.insertMode": "replace",
-  "editor.linkedEditing": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 1.2,
-  "launch": {},
-  "[json]": {},
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
-  "update.showReleaseNotes": false,
-  "zenMode.hideLineNumbers": false,
+	"window.zoomLevel": 1,
+	"workbench.sideBar.location": "left",
+	"files.autoSave": "afterDelay",
+	"editor.lineNumbers": "relative",
+	"editor.wordWrap": "on",
+	"editor.fontWeight": 400,
+	"editor.stickyScroll.enabled": false,
+	// ----------------------------------------------------------------------------------------------------------
+	// Hides the title bar at the very top of the window
+	"window.menuBarVisibility": "toggle", // Hides the menu (File, Edit..) - press Alt to show it
 
-  // Explorer Edits
-  "material-icon-theme.hidesExplorerArrows": true,
-  "workbench.tree.renderIndentGuides": "none",
-  "workbench.tree.indent": 16,
-  "explorer.compactFolders": false,
+	// Hides the code overview on the right side
+	"editor.minimap.enabled": false,
 
-  //git edits
-  "git.decorations.enabled": false,
+	// Hides the vertical line that marks the print margin
+	"editor.rulers": [],
 
-  //https://github.com/glennraya/vscode-settings-json/blob/main/settings.json
-  "editor.copyWithSyntaxHighlighting": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.emptySelectionClipboard": false,
-  "workbench.editor.enablePreview": false,
-  "window.newWindowDimensions": "inherit",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "files.trimTrailingWhitespace": true,
-  "diffEditor.renderSideBySide": false,
-  "editor.snippetSuggestions": "top",
-  "editor.detectIndentation": false,
-  "window.nativeFullScreen": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "editor.guides.indentation": false,
+	// Hides the glyph margin (where breakpoints and icons appear)
+	"editor.glyphMargin": false,
 
-  "vim.leader": "<Space>",
-  "vim.hlsearch": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    // NAVIGATION
-    // switch b/w buffers
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
+	// (Optional) Hides the Side Bar (File Explorer) by default.
+	// You can still toggle it with Ctrl+B
+	"workbench.startupEditor": "newUntitledFile",
+	// --- Paste your other settings below this line ---
+	// -----------------------------------------------------------------------------------------------------------
+	// Explorer Edits
+	"material-icon-theme.hidesExplorerArrows": true,
+	"workbench.tree.indent": 16,
+	"explorer.compactFolders": false,
 
-    // splits
-    { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] },
+	//git edits
+	"git.decorations.enabled": false,
 
-    // panes
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["leader", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
+	"vim.leader": "<Space>",
+	"vim.hlsearch": true,
+	"vim.useSystemClipboard": true,
+	"vim.handleKeys": {
+		"<C-c>": false,
+		"<C-v>": false,
+		"<C-f>": false,
+		"<C-j>": false,
+		"<C-x>": false,
+		"<C-a>": false
+	},
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{ "before": ["<S-h>"], "commands": [":bprevious"] },
+		{ "before": ["<S-l>"], "commands": [":bnext"] },
+		{ "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+		{
+			"before": ["leader", "e"],
+			"commands": ["workbench.action.toggleSidebarVisibility"]
+		},
+		{
+			"before": ["leader", "h"],
+			"commands": ["workbench.action.focusLeftGroup"]
+		},
+		{
+			"before": ["leader", "l"],
+			"commands": ["workbench.action.focusRightGroup"]
+		}
+	],
+	"github.copilot.nextEditSuggestions.fixes": false,
+	"code-runner.runInTerminal": true,
+	"explorer.confirmDelete": false,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	// "editor.tokenColorCustomizations": {
+	// 	"comments": "#8F9779"
+	// },
+	"dart.flutterSdkPath": "F:\\Installed Software\\flutter\\flutter",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"editor.lineHeight": 1.2,
+	"breadcrumbs.enabled": false,
+	"workbench.editor.tabSizing": "shrink",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.useTabs": true,
+	"notebook.defaultFormatter": "esbenp.prettier-vscode",
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"redhat.telemetry.enabled": true,
+	"editor.formatOnSave": true,
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"javascriptreact": false
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"editor.fontFamily": "FiraCode Nerd Font Medium",
+	"window.commandCenter": false,
+	"workbench.activityBar.location": "bottom",
+	"editor.fontSize": 15,
 
-    //FILE TREE
-    {
-      "before": ["leader", "n", "e"],
-      "commands": ["workbench.explorer.fileView.focus"]
-    },
+	// "workbench.colorCustomizations": {
+	// 	// === Fully transparent across all surfaces ===
+	// 	"editor.background": "#00000000",
+	// 	"editorGutter.background": "#00000000",
+	// 	"sideBar.background": "#00000000",
+	// 	"activityBar.background": "#00000000",
+	// 	"titleBar.activeBackground": "#00000000",
+	// 	"titleBar.inactiveBackground": "#00000000",
+	// 	"statusBar.background": "#00000000",
+	// 	"statusBar.noFolderBackground": "#00000000",
+	// 	"statusBar.debuggingBackground": "#00000000",
+	// 	"panel.background": "#00000000",
+	// 	"terminal.background": "#00000000",
+	// 	"editorGroupHeader.tabsBackground": "#00000000",
+	// 	"editorGroupHeader.noTabsBackground": "#00000000",
+	// 	"tab.activeBackground": "#00000000",
+	// 	"tab.inactiveBackground": "#00000000",
+	// 	"menubar.selectionBackground": "#00000000",
+	// 	"dropdown.background": "#00000000",
+	// 	"dropdown.border": "#00000000",
+	// 	"notifications.background": "#00000000",
+	// 	"peekViewEditor.background": "#00000000",
+	// 	"peekViewResult.background": "#00000000",
+	// 	"peekViewTitle.background": "#00000000",
+	// 	// "quickInput.background": "#00000000",     //ctrl + shift + p => window
+	// 	"debugToolBar.background": "#00000000",
+	// 	"welcomePage.background": "#00000000",
 
-    // NICE TO HAVE
-    { "before": ["leader", "w"], "commands": [":w!"] },
-    { "before": ["leader", "q"], "commands": [":q!"] },
-    { "before": ["leader", "x"], "commands": [":x!"] },
-    {
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
-    },
-    {
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["<leader>", "c", "a"],
-      "commands": ["editor.action.quickFix"]
-    },
-    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
-    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    // Stay in visual mode while indenting
-    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-    { "before": [">"], "commands": ["editor.action.indentLines"] },
-    // Move selected lines while staying in visual mode
-    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
-    // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-  ],
+	// 	// === Borders removed ===
+	// 	"editorGroup.border": "#00000000",
+	// 	"panel.border": "#00000000",
+	// 	"sideBar.border": "#00000000",
+	// 	"terminal.border": "#00000000",
+	// 	"editorGroupHeader.border": "#00000000",
+	// 	"statusBar.border": "#00000000",
+	// 	"titleBar.border": "#00000000",
 
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "go.toolsManagement.autoUpdate": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "redhat.telemetry.enabled": true,
-  "code-runner.runInTerminal": true,
-  "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "JetBrains Mono Regular",
-  "code-runner.executorMap": {
-    "javascript": "node",
-    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "zig": "zig run",
-    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "php": "php",
-    "python": "python -u",
-    "perl": "perl",
-    "perl6": "perl6",
-    "ruby": "ruby",
-    "go": "go run",
-    "lua": "lua",
-    "groovy": "groovy",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "cmd /c",
-    "shellscript": "bash",
-    "fsharp": "fsi",
-    "csharp": "dotnet run",
-    "vbscript": "cscript //Nologo",
-    "typescript": "tsc && node $fileNameWithoutExt.js",
-    "coffeescript": "coffee",
-    "scala": "scala",
-    "swift": "swift",
-    "julia": "julia",
-    "crystal": "crystal",
-    "ocaml": "ocaml",
-    "r": "Rscript",
-    "applescript": "osascript",
-    "clojure": "lein exec",
-    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
-    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
-    "racket": "racket",
-    "scheme": "csi -script",
-    "ahk": "autohotkey",
-    "autoit": "autoit3",
-    "dart": "dart",
-    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
-    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
-    "haskell": "runghc",
-    "nim": "nim compile --verbosity:0 --hints:off --run",
-    "lisp": "sbcl --script",
-    "kit": "kitc --run",
-    "v": "v run",
-    "sass": "sass --style expanded",
-    "scss": "scss --style expanded",
-    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
-    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "sml": "cd $dir && sml $fileName",
-    "mojo": "mojo run",
-    "erlang": "escript",
-    "spwn": "spwn build",
-    "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
-    "gleam": "gleam run -m $fileNameWithoutExt"
-  },
-  "files.exclude": {
-    "**/*.class": true
-  },
-  "catppuccin.italicKeywords": false,
-  "netbeans.javaSupport.enabled": false,
-  "catppuccin.italicComments": false,
-  "editor.fontFamily": "Fira Code",
-  "files.autoSave": "afterDelay",
-  "workbench.sideBar.location": "right",
-  "workbench.iconTheme": "material-icon-theme",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.activityBar.location": "top",
-  "C_Cpp.default.compilerPath": "",
-  "explorer.confirmDelete": false,
+	// 	// === Text and line numbers ===
+	// 	"foreground": "#e0def4",
+	// 	"editorLineNumber.foreground": "#4A4E5D",
+	// 	"editorLineNumber.activeForeground": "#C3CEDA",
+	// 	"activityBar.foreground": "#e0def4",
+	// 	"sideBar.foreground": "#e0def4",
+	// 	"statusBar.foreground": "#e0def4",
+	// 	"titleBar.activeForeground": "#e0def4",
+	// 	"titleBar.inactiveForeground": "#e0def4",
+	// 	"terminal.foreground": "#e0def4",
 
-  "workbench.colorCustomizations": {
-    // "editor.background": "#0F0F0F", // Code editor background
-    // "sideBar.background": "#121212", // Sidebar background
-    // "activityBar.background": "#0F0F0F", // Activity bar background
-    // "titleBar.activeBackground": "#0F0F0F", // Active title bar
-    // "titleBar.inactiveBackground": "#0F0F0F", // Inactive title bar
-    // "statusBar.background": "#0F0F0F", // Status bar background
-    // "statusBar.noFolderBackground": "#0F0F0F", // Status bar (no folder open)
-    // "statusBar.debuggingBackground": "#0F0F0F", // Status bar (debug mode)
+	// 	// === Scrollbars (optional) ===
+	// 	"scrollbarSlider.background": "#2a2837",
+	// 	"scrollbarSlider.hoverBackground": "#393552",
+	// 	"scrollbarSlider.activeBackground": "#524f67"
+	// },
 
-    // "editorGutter.background": "#0F0F0F", // Gutter (line numbers area)
-    // "tab.activeBackground": "#0F0F0F", // Active tab background
-    // "tab.inactiveBackground": "#0F0F0F", // Inactive tabs background
-    // "panel.background": "#121212", // Bottom panel (terminal, debug, output)
-    // "terminal.background": "#121212", // Terminal background
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": [
+					"comment",
+					"comment.block.documentation",
+					"comment.line",
+					"comment.block"
+				],
+				"settings": {
+					"foreground": "#6A9955",
+					"fontStyle": "italic"
+				}
+			}
+		]
+	},
 
-    // "editorGroupHeader.tabsBackground": "#0F0F0F", // Tab bar background
-    // "editorGroupHeader.noTabsBackground": "#0F0F0F", // No tabs open background
-    // "editorGroupHeader.border": "#0F0F0F", // Tab bar border
+	"background.enabled": true,
+	"background.fullscreen": {
+		"images": ["file:///F:/Wallpapers/vscodejpg.jpg"],
+		"opacity": 0.1,
+		"size": "cover",
+		"position": "center"
+	},
 
-    "editorLineNumber.foreground": "#4A4E5D", // Line numbers color
-    "editorLineNumber.activeForeground": "#C3CEDA" // Active line number color
-  },
-
-  "editor.tokenColorCustomizations": {
-    "comments": "#8F9779"
-  },
-
-  "git.autofetch": true,
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "netbeans.jdkhome": "c:\\Program Files\\Java\\jdk-22",
-  "netbeans.project.jdkhome": "c:\\Program Files\\Java\\jdk-22",
-  "java.jdt.ls.java.home": "c:\\Program Files\\Java\\jdk-22",
-  "terminal.integrated.env.windows": {
-    "JAVA_HOME": "c:\\Program Files\\Java\\jdk-22",
-    "PATH": "c:\\Program Files\\Java\\jdk-22\\bin;${env:PATH}"
-  },
-  "cmake.showOptionsMovedNotification": false,
-  "files.autoSaveDelay": 500,
-  "editor.fontSize": 16,
-  "editor.fontWeight": "normal",
-  "git.openRepositoryInParentFolders": "always",
-  "workbench.colorTheme": "Bearded Theme Monokai Black",
-  "editor.lineNumbers": "relative",
-  "explorer.confirmDragAndDrop": false,
-  "terminal.integrated.fontSize": 15
+	"workbench.secondarySideBar.defaultVisibility": "visible",
+	"workbench.colorTheme": "Bearded Theme Monokai Reversed",
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.detectIndentation": false,
+	"editor.tabSize": 2,
+	"workbench.tree.renderIndentGuides": "none"
 }
