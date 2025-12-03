@@ -1,6 +1,6 @@
 {
 	"window.zoomLevel": 1,
-	"workbench.sideBar.location": "left",
+	"workbench.sideBar.location": "right",
 	"files.autoSave": "afterDelay",
 	"editor.lineNumbers": "relative",
 	"editor.wordWrap": "on",
@@ -43,7 +43,11 @@
 		"<C-x>": false,
 		"<C-a>": false
 	},
+
 	"vim.normalModeKeyBindingsNonRecursive": [
+		{ "before": ["F"], "after": ["^"] }, // go to the beginning of the line
+		{ "before": [":"], "after": ["$"] }, // go to the end of the line
+
 		{ "before": ["<S-h>"], "commands": [":bprevious"] },
 		{ "before": ["<S-l>"], "commands": [":bnext"] },
 		{ "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
@@ -58,7 +62,10 @@
 		{
 			"before": ["leader", "l"],
 			"commands": ["workbench.action.focusRightGroup"]
-		}
+		},
+
+		{ "before": ["<S-j>"], "commands": ["editor.action.moveLinesDownAction"] }, // move line down
+		{ "before": ["<S-k>"], "commands": ["editor.action.moveLinesUpAction"] } // move line up
 	],
 	"github.copilot.nextEditSuggestions.fixes": false,
 	"code-runner.runInTerminal": true,
@@ -71,7 +78,6 @@
 	// },
 	"dart.flutterSdkPath": "F:\\Installed Software\\flutter\\flutter",
 	"liveServer.settings.donotShowInfoMsg": true,
-	"editor.lineHeight": 1.2,
 	"breadcrumbs.enabled": false,
 	"workbench.editor.tabSizing": "shrink",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -89,94 +95,117 @@
 		"javascriptreact": false
 	},
 	"security.workspace.trust.untrustedFiles": "open",
-	"editor.fontFamily": "FiraCode Nerd Font Medium",
+	"editor.fontFamily": "FiraCode Nerd Font",
 	"window.commandCenter": false,
 	"workbench.activityBar.location": "bottom",
-	"editor.fontSize": 15,
 
 	// "workbench.colorCustomizations": {
-	// 	// === Fully transparent across all surfaces ===
-	// 	"editor.background": "#00000000",
-	// 	"editorGutter.background": "#00000000",
-	// 	"sideBar.background": "#00000000",
-	// 	"activityBar.background": "#00000000",
-	// 	"titleBar.activeBackground": "#00000000",
-	// 	"titleBar.inactiveBackground": "#00000000",
-	// 	"statusBar.background": "#00000000",
-	// 	"statusBar.noFolderBackground": "#00000000",
-	// 	"statusBar.debuggingBackground": "#00000000",
-	// 	"panel.background": "#00000000",
-	// 	"terminal.background": "#00000000",
-	// 	"editorGroupHeader.tabsBackground": "#00000000",
-	// 	"editorGroupHeader.noTabsBackground": "#00000000",
-	// 	"tab.activeBackground": "#00000000",
-	// 	"tab.inactiveBackground": "#00000000",
-	// 	"menubar.selectionBackground": "#00000000",
-	// 	"dropdown.background": "#00000000",
-	// 	"dropdown.border": "#00000000",
-	// 	"notifications.background": "#00000000",
-	// 	"peekViewEditor.background": "#00000000",
-	// 	"peekViewResult.background": "#00000000",
-	// 	"peekViewTitle.background": "#00000000",
-	// 	// "quickInput.background": "#00000000",     //ctrl + shift + p => window
-	// 	"debugToolBar.background": "#00000000",
-	// 	"welcomePage.background": "#00000000",
+	// 	"editorGutter.background": "#121212",
+	// 	// Core surfaces
+	// 	"editor.background": "#121212",
+	// 	"sideBar.background": "#121212",
+	// 	"activityBar.background": "#121212",
+	// 	"panel.background": "#121212",
+	// 	"terminal.background": "#121212",
+	// 	"editorGroupHeader.tabsBackground": "#121212",
+	// 	"titleBar.activeBackground": "#121212",
+	// 	"titleBar.inactiveBackground": "#121212",
+	// 	"statusBar.background": "#121212",
+	// 	"statusBar.noFolderBackground": "#121212",
+	// 	"statusBar.debuggingBackground": "#121212",
 
-	// 	// === Borders removed ===
-	// 	"editorGroup.border": "#00000000",
-	// 	"panel.border": "#00000000",
-	// 	"sideBar.border": "#00000000",
-	// 	"terminal.border": "#00000000",
-	// 	"editorGroupHeader.border": "#00000000",
-	// 	"statusBar.border": "#00000000",
-	// 	"titleBar.border": "#00000000",
+	// 	// Borders
+	// 	"sideBar.border": "#121212",
+	// 	"panel.border": "#121212",
+	// 	"editorGroup.border": "#121212",
+	// 	"terminal.border": "#121212",
+	// 	"titleBar.border": "#121212",
+	// 	"statusBar.border": "#121212",
 
-	// 	// === Text and line numbers ===
-	// 	"foreground": "#e0def4",
-	// 	"editorLineNumber.foreground": "#4A4E5D",
-	// 	"editorLineNumber.activeForeground": "#C3CEDA",
-	// 	"activityBar.foreground": "#e0def4",
-	// 	"sideBar.foreground": "#e0def4",
-	// 	"statusBar.foreground": "#e0def4",
-	// 	"titleBar.activeForeground": "#e0def4",
-	// 	"titleBar.inactiveForeground": "#e0def4",
-	// 	"terminal.foreground": "#e0def4",
+	// 	// Text + foregrounds
+	// 	"foreground": "#E0DEF4",
+	// 	"editor.foreground": "#E0DEF4",
+	// 	"sideBar.foreground": "#E0DEF4",
+	// 	"activityBar.foreground": "#E0DEF4",
+	// 	"statusBar.foreground": "#E0DEF4",
+	// 	"titleBar.activeForeground": "#E0DEF4",
+	// 	"titleBar.inactiveForeground": "#706E86",
+	// 	"terminal.foreground": "#E0DEF4",
 
-	// 	// === Scrollbars (optional) ===
-	// 	"scrollbarSlider.background": "#2a2837",
-	// 	"scrollbarSlider.hoverBackground": "#393552",
-	// 	"scrollbarSlider.activeBackground": "#524f67"
+	// 	// Line numbers
+	// 	"editorLineNumber.foreground": "#706E86",
+	// 	"editorLineNumber.activeForeground": "#E0DEF4",
+
+	// 	// Terminal ANSI colors (mapped exactly)
+	// 	"terminal.ansiBlack": "#706E86",
+	// 	"terminal.ansiRed": "#EB6F92",
+	// 	"terminal.ansiGreen": "#9CCFD8",
+	// 	"terminal.ansiYellow": "#F6C177",
+	// 	"terminal.ansiBlue": "#31748F",
+	// 	"terminal.ansiMagenta": "#C4A7E7",
+	// 	"terminal.ansiCyan": "#EBBCBA",
+	// 	"terminal.ansiWhite": "#E0DEF4",
+
+	// 	"terminal.ansiBrightBlack": "#706E86",
+	// 	"terminal.ansiBrightRed": "#EB6F92",
+	// 	"terminal.ansiBrightGreen": "#9CCFD8",
+	// 	"terminal.ansiBrightYellow": "#F6C177",
+	// 	"terminal.ansiBrightBlue": "#31748F",
+	// 	"terminal.ansiBrightMagenta": "#C4A7E7",
+	// 	"terminal.ansiBrightCyan": "#EBBCBA",
+	// 	"terminal.ansiBrightWhite": "#E0DEF4",
+
+	// 	// Cursor + selection
+	// 	// "editorCursor.foreground": "#FFFFFF",
+	// 	"terminalCursor.foreground": "#FFFFFF",
+
+	// 	"editor.selectionBackground": "#FFFFFF20",
+	// 	"editor.inactiveSelectionBackground": "#FFFFFF10",
+	// 	"selection.background": "#FFFFFF20",
+
+	// 	// Scrollbars
+	// 	"scrollbarSlider.background": "#2a283780",
+	// 	"scrollbarSlider.hoverBackground": "#39355280",
+	// 	"scrollbarSlider.activeBackground": "#524f67aa"
 	// },
 
-	"editor.tokenColorCustomizations": {
-		"textMateRules": [
-			{
-				"scope": [
-					"comment",
-					"comment.block.documentation",
-					"comment.line",
-					"comment.block"
-				],
-				"settings": {
-					"foreground": "#6A9955",
-					"fontStyle": "italic"
-				}
-			}
-		]
-	},
+	"scm.diffDecorations": "none", // git color hide
 
 	"background.enabled": true,
 	"background.fullscreen": {
-		"images": ["file:///F:/Wallpapers/vscodejpg.jpg"],
+		// "images": ["file:///F:/Wallpapers/vscodejpg.jpg"],
 		"opacity": 0.1,
 		"size": "cover",
 		"position": "center"
 	},
 
 	"workbench.secondarySideBar.defaultVisibility": "visible",
-	"workbench.colorTheme": "Bearded Theme Monokai Reversed",
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.detectIndentation": false,
 	"editor.tabSize": 2,
-	"workbench.tree.renderIndentGuides": "none"
+	"workbench.tree.renderIndentGuides": "none",
+	"zenMode.hideLineNumbers": false,
+	"zenMode.centerLayout": false,
+	"zenMode.showTabs": "none",
+	"zenMode.fullScreen": false,
+
+	// custom ui
+	"custom-ui-style.font.monospace": "FiraCode Nerd Font",
+	"custom-ui-style.font.sansSerif": "FiraCode Nerd Font",
+
+	"editor.lineHeight": 1.2,
+	"chat.instructionsFilesLocations": {
+		".github/instructions": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-collections-post-response.instructions.md": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-collections-pre-request.instructions.md": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-folder-post-response.instructions.md": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-folder-pre-request.instructions.md": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-http-request-post-response.instructions.md": true,
+		"C:\\Users\\User\\AppData\\Local\\Temp\\postman-http-request-pre-request.instructions.md": true
+	},
+	"editor.fontSize": 15,
+	"terminal.integrated.fontFamily": "FiraCode Nerd Font",
+	"terminal.integrated.letterSpacing": 1,
+	"terminal.integrated.lineHeight": 1.2,
+	"workbench.colorTheme": "rose-pine-nvchad-theme"
 }
