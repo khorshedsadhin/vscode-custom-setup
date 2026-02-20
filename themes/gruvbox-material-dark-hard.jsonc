@@ -211,7 +211,7 @@
 		"editorSuggestWidget.selectedBackground": "#3c3836",
 
 		// ── Focus Border ──
-		"focusBorder": "#504945"
+		"focusBorder": "#504945",
 	},
 
 	"editor.tokenColorCustomizations": {
@@ -222,12 +222,12 @@
 					"comment",
 					"comment.line",
 					"comment.block",
-					"punctuation.definition.comment"
+					"punctuation.definition.comment",
 				],
 				"settings": {
 					"foreground": "#928374",
-					"fontStyle": "italic"
-				}
+					"fontStyle": "italic",
+				},
 			},
 			// ── Keywords, Control Flow ──
 			{
@@ -249,11 +249,15 @@
 					"keyword.operator.instanceof",
 					"keyword.operator.logical",
 					"storage.type.function",
-					"storage.type.class"
+					"storage.type.class",
+					"storage.type.interface",
+					"storage.type.enum",
+					"storage.type.type",
+					"storage.type.namespace",
 				],
 				"settings": {
-					"foreground": "#ea6962"
-				}
+					"foreground": "#ea6962",
+				},
 			},
 			// ── Operators, Labels, Tags ──
 			{
@@ -269,11 +273,11 @@
 					"storage.type",
 					"storage.modifier",
 					"entity.name.tag",
-					"punctuation.definition.tag"
+					"punctuation.definition.tag",
 				],
 				"settings": {
-					"foreground": "#e78a4e"
-				}
+					"foreground": "#e78a4e",
+				},
 			},
 			// ── Types, Special ──
 			{
@@ -289,11 +293,11 @@
 					"entity.other.inherited-class",
 					"entity.name.type.parameter",
 					"meta.type.annotation",
-					"meta.type.parameters"
+					"meta.type.parameters",
 				],
 				"settings": {
-					"foreground": "#d8a657"
-				}
+					"foreground": "#d8a657",
+				},
 			},
 			// ── Functions ──
 			{
@@ -303,11 +307,11 @@
 					"support.function",
 					"support.function.builtin",
 					"meta.function-call",
-					"entity.name.function.decorator"
+					"entity.name.function.decorator",
 				],
 				"settings": {
-					"foreground": "#a9b665"
-				}
+					"foreground": "#a9b665",
+				},
 			},
 			// ── Strings ──
 			{
@@ -316,11 +320,11 @@
 					"string.quoted",
 					"string.template",
 					"string.interpolated",
-					"punctuation.definition.string"
+					"punctuation.definition.string",
 				],
 				"settings": {
-					"foreground": "#a9b665"
-				}
+					"foreground": "#a9b665",
+				},
 			},
 			// ── Numbers, Booleans, Constants ──
 			{
@@ -328,11 +332,23 @@
 					"constant.numeric",
 					"constant.language.boolean",
 					"constant.language.null",
-					"constant.language.undefined"
+					"constant.language.undefined",
 				],
 				"settings": {
-					"foreground": "#d3869b"
-				}
+					"foreground": "#d3869b",
+				},
+			},
+			// ── Language Variables (this, super, etc.) ──
+			{
+				"scope": [
+					"variable.language",
+					"variable.language.this",
+					"variable.language.super",
+					"variable.language.arguments",
+				],
+				"settings": {
+					"foreground": "#d3869b",
+				},
 			},
 			// ── Constants, Macros ──
 			{
@@ -341,11 +357,11 @@
 					"variable.other.enummember",
 					"constant.other",
 					"support.constant",
-					"constant.character.escape"
+					"constant.character.escape",
 				],
 				"settings": {
-					"foreground": "#89b482"
-				}
+					"foreground": "#89b482",
+				},
 			},
 			// ── Variables, Identifiers, Properties ──
 			{
@@ -356,11 +372,11 @@
 					"variable.other.readwrite",
 					"entity.name.variable",
 					"support.variable",
-					"meta.object-literal.key"
+					"meta.object-literal.key",
 				],
 				"settings": {
-					"foreground": "#7daea3"
-				}
+					"foreground": "#7daea3",
+				},
 			},
 			// ── Preprocessor, Import paths ──
 			{
@@ -370,11 +386,21 @@
 					"meta.preprocessor",
 					"entity.name.function.preprocessor",
 					"keyword.control.at-rule",
-					"punctuation.definition.directive"
+					"punctuation.definition.directive",
 				],
 				"settings": {
-					"foreground": "#d3869b"
-				}
+					"foreground": "#d3869b",
+				},
+			},
+			// ── Template Expression Delimiters (${ }) ──
+			{
+				"scope": [
+					"punctuation.definition.template-expression.begin",
+					"punctuation.definition.template-expression.end",
+				],
+				"settings": {
+					"foreground": "#ea6962",
+				},
 			},
 			// ── Punctuation / Delimiters ──
 			{
@@ -387,104 +413,104 @@
 					"meta.brace.curly",
 					"punctuation.accessor",
 					"punctuation.terminator",
-					"punctuation.separator.comma"
+					"punctuation.separator.comma",
 				],
 				"settings": {
-					"foreground": "#d4be98"
-				}
+					"foreground": "#d4be98",
+				},
 			},
 			// ── HTML/XML Attributes ──
 			{
 				"scope": ["entity.other.attribute-name"],
 				"settings": {
-					"foreground": "#d8a657"
-				}
+					"foreground": "#d8a657",
+				},
 			},
 			// ── CSS Properties ──
 			{
 				"scope": [
 					"support.type.property-name.css",
-					"support.type.vendored.property-name.css"
+					"support.type.vendored.property-name.css",
 				],
 				"settings": {
-					"foreground": "#7daea3"
-				}
+					"foreground": "#7daea3",
+				},
 			},
 			// ── CSS Values ──
 			{
 				"scope": [
 					"support.constant.property-value.css",
 					"support.constant.color.css",
-					"constant.other.color.rgb-value.hex.css"
+					"constant.other.color.rgb-value.hex.css",
 				],
 				"settings": {
-					"foreground": "#d3869b"
-				}
+					"foreground": "#d3869b",
+				},
 			},
 			// ── Markdown ──
 			{
 				"scope": ["markup.heading", "entity.name.section"],
 				"settings": {
 					"foreground": "#e78a4e",
-					"fontStyle": "bold"
-				}
+					"fontStyle": "bold",
+				},
 			},
 			{
 				"scope": ["markup.bold"],
 				"settings": {
-					"fontStyle": "bold"
-				}
+					"fontStyle": "bold",
+				},
 			},
 			{
 				"scope": ["markup.italic"],
 				"settings": {
-					"fontStyle": "italic"
-				}
+					"fontStyle": "italic",
+				},
 			},
 			{
 				"scope": ["markup.inline.raw", "markup.fenced_code"],
 				"settings": {
-					"foreground": "#a9b665"
-				}
+					"foreground": "#a9b665",
+				},
 			},
 			{
 				"scope": ["markup.underline.link"],
 				"settings": {
-					"foreground": "#7daea3"
-				}
+					"foreground": "#7daea3",
+				},
 			},
 			// ── JSON keys ──
 			{
 				"scope": ["support.type.property-name.json"],
 				"settings": {
-					"foreground": "#e78a4e"
-				}
+					"foreground": "#e78a4e",
+				},
 			},
 			// ── YAML keys ──
 			{
 				"scope": ["entity.name.tag.yaml"],
 				"settings": {
-					"foreground": "#7daea3"
-				}
+					"foreground": "#7daea3",
+				},
 			},
 			// ── Decorators / Annotations ──
 			{
 				"scope": [
 					"meta.decorator",
 					"punctuation.decorator",
-					"meta.decorator entity.name.function"
+					"meta.decorator entity.name.function",
 				],
 				"settings": {
-					"foreground": "#d8a657"
-				}
+					"foreground": "#d8a657",
+				},
 			},
 			// ── Regex ──
 			{
 				"scope": ["string.regexp", "constant.other.character-class.regexp"],
 				"settings": {
-					"foreground": "#a9b665"
-				}
-			}
-		]
-	}
+					"foreground": "#a9b665",
+				},
+			},
+		],
+	},
 }
